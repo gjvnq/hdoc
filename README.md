@@ -26,6 +26,12 @@ The file format is basically an HTML shorthand.
 </hdoc>
 ```
 
+## Processing Order
+
+1. Includes
+2. Counters
+3. Templates
+
 ### Templates
 
 TODO: something like "static" web components.
@@ -86,16 +92,40 @@ The attribute `no-toc` can be used to exclude an element from the TOC.
 
 ### Abbreviations
 
-The notation `<abbr w="WORD"/>` will be automatically be replaced by the propper `<abbr>` tag. Example:
+Use `<abbr w="WORD"/>` (must have no inner content) will be automatically be replaced by the propper `<abbr>` tag. If the `w` (word) attribute is absent on `<abbr>` with the `title` attribute, it will be infered via the text conents. Example:
 
 ```html
 <abbr title="Uniform Resource Name">URN</abbr> lorem ipsum dolor est ... <abbr w="URN"/> ...
+<abbr title="Uniform Resource Location" w="ABC">URL</abbr> lorem ipsum dolor est ... <abbr w="ABC"/> ...
 ```
 
 Becomes:
 
 ```html
 <abbr title="Uniform Resource Name">URN</abbr> lorem ipsum dolor est ... <abbr title="Uniform Resource Name">URN</abbr> ...
+<abbr title="Uniform Resource Location">URL</abbr> lorem ipsum dolor est ... <abbr title="Uniform Resource Location">URL</abbr> ...
 ```
 
 All `<abbr>` will be mobile-friendly ([see approach](https://bitsofco.de/making-abbr-work-for-touchscreen-keyboard-mouse/)).
+
+### Definitions
+
+Use `<dfn w="WORD"/>` (must have no inner content) to include and link to the definition of a word. If the `w` (word) attribute is absent on the contentful `<dfn>`, it will be infered via the text conents. Example:
+
+```html
+<dfn>HTML</dfn> is a standard ....
+In an <dfn w="HTML"/> document, ...
+```
+
+Becomes:
+
+```html
+<dfn id="dfn-HTML">HTML</dfn> is a standard ....
+In an <a href="dfn-HTML" class="dfn-a">HTML</a> document, ...
+```
+
+### Syntax Highlight
+
+### Include
+
+Use `<include>` with the `src` attribute to include another file into this one. Use the `escape` attribute to avoid HTML injections.
