@@ -1,0 +1,64 @@
+<hdoc>
+  <opts>
+    <template name="h1">
+      <h1 h-attrs="*">
+        <span class="secno">
+          <h-counter name="h1"/>
+        </span>
+        &nbsp;
+        <h-copy select="*"/>
+        <a href="#{{@id}}" class="self-link"></a>
+      </h1>
+    </template>
+    <template name="h2">
+      <h2 h-attrs="*">
+        <span class="secno">
+          <h-counter name="h1"/>.<h-counter name="h2"/>
+        </span>
+        &nbsp;
+        <h-copy select="*"/>
+        <a href="#{{@id}}" class="self-link"></a>
+      </h2>
+    </template>
+    <template name="h3">
+      <h3 h-attrs="*">
+        <span class="secno">
+          <h-counter name="h1"/>.<h-counter name="h2"/>.<h-counter name="h3"/>
+        </span>
+        &nbsp;
+        <h-copy select="*"/>
+        <a href="#{{@id}}" class="self-link"></a>
+      </h3>
+    </template>
+    <template name="h4">
+      <h4 h-attrs="*">
+        <span class="secno">
+          <h-counter name="h1"/>.<h-counter name="h2"/>.<h-counter name="h3"/>.<h-counter name="h4"/>
+        </span>
+        &nbsp;
+        <h-copy select="*"/>
+        <a href="#{{@id}}" class="self-link"></a>
+      </h4>
+    </template>
+    <template name="h5">
+      <h5 h-attrs="*">
+        <span class="secno">
+          <h-counter name="h1"/>.<h-counter name="h2"/>.<h-counter name="h3"/>.<h-counter name="h4"/>.<h-counter name="h5"/>
+        </span>
+        &nbsp;
+        <h-copy select="*"/>
+        <a href="#{{@id}}" class="self-link"></a>
+      </h5>
+    </template>
+    <template name="h6">
+      <h6 h-attrs="*">
+        <span class="secno">
+          <h-counter name="h1"/>.<h-counter name="h2"/>.<h-counter name="h3"/>.<h-counter name="h4"/>.<h-counter name="h5"/>.<h-counter name="h6"/>
+        </span>
+        &nbsp;
+        <h-copy select="*"/>
+        <a href="#{{@id}}" class="self-link"></a>
+      </h6>
+    </template>
+   </opts>
+</hdoc>
