@@ -1,0 +1,87 @@
+<hdoc>
+  <opts>
+    <template match="h1">
+      <h1 id="{autogen_id()}">
+        <copy-of select="@*"/>
+        <span class="secno">
+          <h-counter name="h1"/>
+        </span>
+        &nbsp;
+        <copy-of select="node()|*"/>
+        <a href="#{@id}" class="self-link"></a>
+      </h1>
+      <h-counter name="h2 h3 h4 h5 h6 p" set="1"/>
+    </template>
+    <template match="h2">
+      <h2 id="{autogen_id()}">
+        <copy-of select="@*"/>
+        <span class="secno">
+          <h-counter name="h1 '.' h2"/>
+        </span>
+        &nbsp;
+        <copy-of select="node()|*"/>
+        <a href="#{@id}" class="self-link"></a>
+      </h2>
+      <h-counter name="h3 h4 h5 h6 p" set="1"/>
+    </template>
+    <template match="h3">
+      <h3 id="{autogen_id()}">
+        <copy-of select="@*"/>
+        <span class="secno">
+          <h-counter name="h1 '.' h2 '.' h3"/>
+        </span>
+        &nbsp;
+        <copy-of select="node()|*"/>
+        <a href="#{@id}" class="self-link"></a>
+      </h3>
+      <h-counter name="h4 h5 h6 p" set="1"/>
+    </template>
+    <template match="h4">
+      <h4 id="{autogen_id()}">
+        <copy-of select="@*"/>
+        <span class="secno">
+          <h-counter name="h1 '.' h2 '.' h3 '.' h4"/>
+        </span>
+        &nbsp;
+        <copy-of select="node()|*"/>
+        <a href="#{@id}" class="self-link"></a>
+      </h4>
+      <h-counter name="h5 h6 p" set="1"/>
+    </template>
+    <template match="h5">
+      <h5 id="{autogen_id()}">
+        <copy-of select="@*"/>
+        <span class="secno">
+          <h-counter name="h1 '.' h2 '.' h3 '.' h4 '.' h5"/>
+        </span>
+        &nbsp;
+        <copy-of select="node()|*"/>
+        <a href="#{@id}" class="self-link"></a>
+      </h5>
+      <h-counter name="h6 p" set="1"/>
+    </template>
+    <template match="h6">
+      <h6 id="{autogen_id()}">
+        <copy-of select="@*"/>
+        <span class="secno">
+          <h-counter name="h1 '.' h2 '.' h3 '.' h4 '.' h5 '.' h6"/>
+        </span>
+        &nbsp;
+        <copy-of select="node()|*"/>
+        <a href="#{@id}" class="self-link"></a>
+      </h6>
+      <h-counter name="p" set="1"/>
+    </template>
+    <template match="p">
+      <p id="{autogen_id()}">
+        <copy-of select="@*"/>
+        <span class="secno">
+          <h-counter name="p"/>
+        </span>
+        &nbsp;
+        <copy-of select="node()|*"/>
+        <a href="#{@id}" class="self-link"></a>
+      </p>
+    </template>
+   </opts>
+</hdoc>

@@ -30,23 +30,23 @@ The file format is basically an HTML shorthand.
 
 1. Includes
 2. `<abbr>` and `<dfn>`
+3. Generate `id` attributes
 4. Templates
 5. Counters
 
 ### Templates
 
-TODO: something like "static" web components.
-
-Use ```<template>``` with the attribute `name` to specify new elements that will be resolved on compile time.
+Templates are a very small subsection of XSLT. Use the `priority` attribute to go around order issues. The default templates have priority 0 and the user ones have priority 1 unless specified otherwise.
 
 Example:
 
 ```html
-<template name="note">
-  <div class="note">
-    <strong>Note <h-val select="@data-counter"/></strong>
-    <h-val select="."/>
-  </div>
+<template match="note">
+  <p>
+    <copy-of select="@*"/>
+    <strong>Note: </strong>
+    <copy-of select="node()|*"/>
+  </p>
 </template>
 ```
 
