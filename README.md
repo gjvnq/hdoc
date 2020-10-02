@@ -29,8 +29,9 @@ The file format is basically an HTML shorthand.
 ## Processing Order
 
 1. Includes
-2. Counters
-3. Templates
+2. `<abbr>` and `<dfn>`
+4. Templates
+5. Counters
 
 ### Templates
 
