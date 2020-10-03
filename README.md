@@ -1,5 +1,5 @@
 # hdoc
-A simple tool for writing nice standalone HTML documents.
+A simple tool for converting an "HTML shorthand" into nice standalone HTML documents.
 
 ## Features
 
@@ -36,7 +36,7 @@ The file format is basically an HTML shorthand.
 
 ### Templates
 
-Templates are a very small subsection of XSLT. Use the `priority` attribute to go around order issues. The default templates have priority 0 and the user ones have priority 1 unless specified otherwise.
+Templates are a *very* small subsection of XSLT. Use the `priority` attribute to go around order issues. The default templates have priority 0 and the user ones have priority 1 unless specified otherwise.
 
 Example:
 
@@ -49,6 +49,8 @@ Example:
   </p>
 </template>
 ```
+
+For now, only the following values on `select` are to be supported: `@*`, `node()|*` and `@attr` where is `attr` is any attribute name. (The last one is the only one that works within arguments.)
 
 ### Counters
 
@@ -129,4 +131,4 @@ In an <a href="dfn-HTML" class="dfn-a">HTML</a> document, ...
 
 ### Include
 
-Use `<include>` with the `src` attribute to include another file into this one. Use the `escape` attribute to avoid HTML injections.
+Use `<include>` with the `src` attribute to include another file into this one. Use the `parse="yes"` to disable escaping.
